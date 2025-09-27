@@ -4,6 +4,10 @@ Imports device_market_system.DatabaseHelper
 Module Globals
     Public IsLoggedIn As Boolean = False
     Public LoginSignupIsOpened As Boolean = False
+    Public profileOpened As Boolean = False
+
+    Public nameOfcurrentUser As String = ""
+
 End Module
 
 Public Class Home
@@ -11,25 +15,21 @@ Public Class Home
         DatabaseHelper.Initialize()
     End Sub
 
-    Private Sub DataGridView1_CellContentClick(sender As Object, e As DataGridViewCellEventArgs)
-
-    End Sub
-
-    Private Sub GroupBox1_Enter(sender As Object, e As EventArgs)
-
-    End Sub
-
-    Private Sub GroupBox1_Enter_1(sender As Object, e As EventArgs) Handles GroupBox1.Enter
-
-    End Sub
-
-    Private Sub GroupBox2_Enter(sender As Object, e As EventArgs) Handles GroupBox2.Enter
-
-    End Sub
-    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+    Public Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
         If IsLoggedIn Then
 
-
+            If Not profileOpened Then
+                Dim profile As New Profile()
+                profile.Show()
+                profileOpened = True
+            Else
+                For Each f As Form In Application.OpenForms
+                    If TypeOf f Is Profile Then
+                        f.BringToFront()
+                        Exit For
+                    End If
+                Next
+            End If
 
         Else 'If not logged in yet'
             MessageBox.Show("Please log in to access the dashboard.", "Access Denied", MessageBoxButtons.OK, MessageBoxIcon.Warning)
@@ -53,11 +53,7 @@ Public Class Home
         End If
     End Sub
 
-    Private Sub Panel1_Paint(sender As Object, e As PaintEventArgs) Handles Panel1.Paint
-
-    End Sub
-
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+    Private Sub Button1_Click(sender As Object, e As EventArgs)
         If IsLoggedIn Then
 
 
@@ -65,7 +61,7 @@ Public Class Home
         Else 'If not logged in yet'
             MessageBox.Show("Please log in to access the dashboard.", "Access Denied", MessageBoxButtons.OK, MessageBoxIcon.Warning)
             If Not LoginSignupIsOpened Then
-                Dim frm3 As New Log_in()
+                Dim frm3 As New Log_in
                 frm3.Show()
                 LoginSignupIsOpened = True
             Else
@@ -83,4 +79,5 @@ Public Class Home
 
         End If
     End Sub
+
 End Class

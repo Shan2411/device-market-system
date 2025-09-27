@@ -22,124 +22,137 @@ Partial Class Home
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Home))
-        GroupBox1 = New GroupBox()
-        Button1 = New Button()
-        PictureBox1 = New PictureBox()
-        Panel1 = New Panel()
-        GroupBox3 = New GroupBox()
-        GroupBox2 = New GroupBox()
         Button2 = New Button()
-        GroupBox1.SuspendLayout()
-        CType(PictureBox1, ComponentModel.ISupportInitialize).BeginInit()
-        Panel1.SuspendLayout()
+        DataGridView1 = New DataGridView()
+        Column1 = New DataGridViewTextBoxColumn()
+        Column2 = New DataGridViewTextBoxColumn()
+        Column3 = New DataGridViewTextBoxColumn()
+        Column4 = New DataGridViewTextBoxColumn()
+        Column5 = New DataGridViewTextBoxColumn()
+        Column6 = New DataGridViewTextBoxColumn()
+        Column7 = New DataGridViewTextBoxColumn()
+        TrackBar1 = New TrackBar()
+        Label1 = New Label()
+        CType(DataGridView1, ComponentModel.ISupportInitialize).BeginInit()
+        CType(TrackBar1, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
-        ' 
-        ' GroupBox1
-        ' 
-        GroupBox1.Anchor = AnchorStyles.Top Or AnchorStyles.Left Or AnchorStyles.Right
-        GroupBox1.Controls.Add(Button1)
-        GroupBox1.Controls.Add(PictureBox1)
-        GroupBox1.Location = New Point(22, 25)
-        GroupBox1.Margin = New Padding(3, 2, 3, 2)
-        GroupBox1.Name = "GroupBox1"
-        GroupBox1.Padding = New Padding(3, 2, 3, 2)
-        GroupBox1.Size = New Size(388, 288)
-        GroupBox1.TabIndex = 0
-        GroupBox1.TabStop = False
-        GroupBox1.Text = "Nitro Laptop"
-        ' 
-        ' Button1
-        ' 
-        Button1.Location = New Point(20, 177)
-        Button1.Margin = New Padding(3, 2, 3, 2)
-        Button1.Name = "Button1"
-        Button1.Size = New Size(104, 40)
-        Button1.TabIndex = 1
-        Button1.Text = "Button1"
-        Button1.UseVisualStyleBackColor = True
-        ' 
-        ' PictureBox1
-        ' 
-        PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), Image)
-        PictureBox1.Location = New Point(20, 20)
-        PictureBox1.Margin = New Padding(3, 2, 3, 2)
-        PictureBox1.Name = "PictureBox1"
-        PictureBox1.Size = New Size(179, 141)
-        PictureBox1.SizeMode = PictureBoxSizeMode.StretchImage
-        PictureBox1.TabIndex = 0
-        PictureBox1.TabStop = False
-        ' 
-        ' Panel1
-        ' 
-        Panel1.Anchor = AnchorStyles.Top Or AnchorStyles.Bottom Or AnchorStyles.Left Or AnchorStyles.Right
-        Panel1.AutoScroll = True
-        Panel1.BackColor = SystemColors.ButtonFace
-        Panel1.Controls.Add(GroupBox3)
-        Panel1.Controls.Add(GroupBox1)
-        Panel1.Controls.Add(GroupBox2)
-        Panel1.Location = New Point(0, 0)
-        Panel1.Name = "Panel1"
-        Panel1.Size = New Size(450, 536)
-        Panel1.TabIndex = 2
-        ' 
-        ' GroupBox3
-        ' 
-        GroupBox3.Anchor = AnchorStyles.Top Or AnchorStyles.Left Or AnchorStyles.Right
-        GroupBox3.Location = New Point(22, 609)
-        GroupBox3.Margin = New Padding(3, 2, 3, 2)
-        GroupBox3.Name = "GroupBox3"
-        GroupBox3.Padding = New Padding(3, 2, 3, 2)
-        GroupBox3.Size = New Size(388, 288)
-        GroupBox3.TabIndex = 2
-        GroupBox3.TabStop = False
-        GroupBox3.Text = "GroupBox3"
-        ' 
-        ' GroupBox2
-        ' 
-        GroupBox2.Anchor = AnchorStyles.Top Or AnchorStyles.Left Or AnchorStyles.Right
-        GroupBox2.Location = New Point(22, 317)
-        GroupBox2.Margin = New Padding(3, 2, 3, 2)
-        GroupBox2.Name = "GroupBox2"
-        GroupBox2.Padding = New Padding(3, 2, 3, 2)
-        GroupBox2.Size = New Size(388, 288)
-        GroupBox2.TabIndex = 1
-        GroupBox2.TabStop = False
-        GroupBox2.Text = "HP Elitbook Laptop"
         ' 
         ' Button2
         ' 
         Button2.Anchor = AnchorStyles.Top Or AnchorStyles.Right
-        Button2.Location = New Point(815, 38)
+        Button2.Location = New Point(1170, 39)
+        Button2.Margin = New Padding(3, 4, 3, 4)
         Button2.Name = "Button2"
-        Button2.Size = New Size(121, 44)
+        Button2.Size = New Size(138, 59)
         Button2.TabIndex = 3
         Button2.Text = "PROFILE"
         Button2.UseVisualStyleBackColor = True
         ' 
+        ' DataGridView1
+        ' 
+        DataGridView1.Anchor = AnchorStyles.Top Or AnchorStyles.Left Or AnchorStyles.Right
+        DataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        DataGridView1.Columns.AddRange(New DataGridViewColumn() {Column1, Column2, Column3, Column4, Column5, Column6, Column7})
+        DataGridView1.Location = New Point(14, 16)
+        DataGridView1.Margin = New Padding(3, 4, 3, 4)
+        DataGridView1.Name = "DataGridView1"
+        DataGridView1.RowHeadersWidth = 51
+        DataGridView1.Size = New Size(1051, 560)
+        DataGridView1.TabIndex = 4
+        ' 
+        ' Column1
+        ' 
+        Column1.HeaderText = "Column1"
+        Column1.MinimumWidth = 6
+        Column1.Name = "Column1"
+        Column1.Width = 125
+        ' 
+        ' Column2
+        ' 
+        Column2.HeaderText = "Column2"
+        Column2.MinimumWidth = 6
+        Column2.Name = "Column2"
+        Column2.Width = 125
+        ' 
+        ' Column3
+        ' 
+        Column3.HeaderText = "Column3"
+        Column3.MinimumWidth = 6
+        Column3.Name = "Column3"
+        Column3.Width = 125
+        ' 
+        ' Column4
+        ' 
+        Column4.HeaderText = "Column4"
+        Column4.MinimumWidth = 6
+        Column4.Name = "Column4"
+        Column4.Width = 125
+        ' 
+        ' Column5
+        ' 
+        Column5.HeaderText = "Column5"
+        Column5.MinimumWidth = 6
+        Column5.Name = "Column5"
+        Column5.Width = 125
+        ' 
+        ' Column6
+        ' 
+        Column6.HeaderText = "Column6"
+        Column6.MinimumWidth = 6
+        Column6.Name = "Column6"
+        Column6.Width = 125
+        ' 
+        ' Column7
+        ' 
+        Column7.HeaderText = "Column7"
+        Column7.MinimumWidth = 6
+        Column7.Name = "Column7"
+        Column7.Width = 125
+        ' 
+        ' TrackBar1
+        ' 
+        TrackBar1.Location = New Point(14, 703)
+        TrackBar1.Margin = New Padding(3, 4, 3, 4)
+        TrackBar1.Name = "TrackBar1"
+        TrackBar1.Size = New Size(362, 56)
+        TrackBar1.TabIndex = 5
+        ' 
+        ' Label1
+        ' 
+        Label1.AutoSize = True
+        Label1.Location = New Point(21, 651)
+        Label1.Name = "Label1"
+        Label1.Size = New Size(87, 20)
+        Label1.TabIndex = 6
+        Label1.Text = "Price Range"
+        ' 
         ' Home
         ' 
-        AutoScaleDimensions = New SizeF(7F, 15F)
+        AutoScaleDimensions = New SizeF(8F, 20F)
         AutoScaleMode = AutoScaleMode.Font
         AutoScroll = True
-        ClientSize = New Size(992, 560)
+        ClientSize = New Size(1361, 865)
+        Controls.Add(Label1)
+        Controls.Add(TrackBar1)
+        Controls.Add(DataGridView1)
         Controls.Add(Button2)
-        Controls.Add(Panel1)
-        Margin = New Padding(3, 2, 3, 2)
         Name = "Home"
-        Text = "Form1"
-        GroupBox1.ResumeLayout(False)
-        CType(PictureBox1, ComponentModel.ISupportInitialize).EndInit()
-        Panel1.ResumeLayout(False)
+        Text = "Device Market System"
+        CType(DataGridView1, ComponentModel.ISupportInitialize).EndInit()
+        CType(TrackBar1, ComponentModel.ISupportInitialize).EndInit()
         ResumeLayout(False)
+        PerformLayout()
     End Sub
-
-    Friend WithEvents GroupBox1 As GroupBox
-    Friend WithEvents PictureBox1 As PictureBox
-    Friend WithEvents Button1 As Button
-    Friend WithEvents GroupBox2 As GroupBox
-    Friend WithEvents GroupBox3 As GroupBox
     Friend WithEvents Button2 As Button
-    Friend WithEvents Panel1 As Panel
+    Friend WithEvents DataGridView1 As DataGridView
+    Friend WithEvents Column1 As DataGridViewTextBoxColumn
+    Friend WithEvents Column2 As DataGridViewTextBoxColumn
+    Friend WithEvents Column3 As DataGridViewTextBoxColumn
+    Friend WithEvents Column4 As DataGridViewTextBoxColumn
+    Friend WithEvents Column5 As DataGridViewTextBoxColumn
+    Friend WithEvents Column6 As DataGridViewTextBoxColumn
+    Friend WithEvents Column7 As DataGridViewTextBoxColumn
+    Friend WithEvents TrackBar1 As TrackBar
+    Friend WithEvents Label1 As Label
 
 End Class

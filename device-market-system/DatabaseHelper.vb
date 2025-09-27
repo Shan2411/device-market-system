@@ -39,6 +39,7 @@ Public Class DatabaseHelper
                 currentForm.Label5.ForeColor = Color.Green
                 currentForm.Label5.Text = "User successfully created!"
                 MessageBox.Show("Sign up successful, Welcome!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                Globals.nameOfcurrentUser = username
                 currentForm.Close()
                 Globals.IsLoggedIn = True
             End If
@@ -75,6 +76,7 @@ Public Class DatabaseHelper
                                 Globals.IsLoggedIn = True
                                 currentForm.Close()
                                 Globals.LoginSignupIsOpened = False
+                                Globals.nameOfcurrentUser = username
                             Else
                                 currentForm.Label5.ForeColor = Color.Red
                                 currentForm.Label5.Text = "Incorrect password"
@@ -98,5 +100,12 @@ Public Class DatabaseHelper
             MessageBox.Show("Error during login: " & ex.Message)
         End Try
     End Sub
+
+    Public Shared Sub LogoutUser()
+        Globals.IsLoggedIn = False
+        Globals.nameOfcurrentUser = ""
+
+    End Sub
+
 
 End Class
