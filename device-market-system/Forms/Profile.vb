@@ -6,6 +6,7 @@ Public Class Profile
         tooltip.InitialDelay = 100     ' 0.1 seconds before it appears
         tooltip.ReshowDelay = 50       ' 0.05 seconds for reshow
         tooltip.ShowAlways = True
+
     End Sub
     Private Sub Profile_Shown(sender As Object, e As EventArgs) Handles Me.Shown
         Label2.Text = Globals.nameOfcurrentUser
@@ -39,5 +40,13 @@ Public Class Profile
         Dim Profile_info As New Profile_Info()
         Profile_info.Show()
         Me.Close()
+    End Sub
+
+    Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
+
+    End Sub
+
+    Private Sub Button4_Click(sender As Object, e As EventArgs) Handles Button4.Click
+
     End Sub
 End Class

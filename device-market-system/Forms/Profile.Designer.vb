@@ -100,7 +100,7 @@ Partial Class Profile
         ' 
         AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
-        ClientSize = New Size(570, 784)
+        ClientSize = New Size(532, 784)
         Controls.Add(Button6)
         Controls.Add(Button4)
         Controls.Add(Button3)

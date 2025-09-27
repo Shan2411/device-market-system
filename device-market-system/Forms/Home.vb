@@ -7,6 +7,7 @@ Module Globals
     Public profileOpened As Boolean = False
 
     Public nameOfcurrentUser As String = ""
+    Public userIsVerified As Boolean = False
 
 End Module
 

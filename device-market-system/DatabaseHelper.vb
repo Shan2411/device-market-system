@@ -1,6 +1,8 @@
-﻿Imports System.Data.SQLite
+﻿Imports System.ComponentModel.DataAnnotations
+Imports System.Data.SQLite
 
 Public Class DatabaseHelper
+    'palitan yung path ng database di ko magawa relative path'
     Private Shared ReadOnly dbPath As String = IO.Path.Combine(Application.StartupPath, "C:\Users\HP\source\repos\device-market-system\device-market-system\database\im_database.db")
     Private Shared ReadOnly connString As String = "Data Source=" & dbPath & ";Version=3;"
 
@@ -100,6 +102,53 @@ Public Class DatabaseHelper
             MessageBox.Show("Error during login: " & ex.Message)
         End Try
     End Sub
+
+    '---------SAVE PROFILE CHANGES-------------'    
+    Public Shared Sub SaveProfile(realName As String, email As String, phoneNumber As String, gender As String)
+        Try
+            Using conn As New SQLiteConnection(connString)
+                conn.Open()
+                Using cmd As New SQLiteCommand("Update users Set realname = @realName, email = @email, phone_number = @phoneNumber, gender = @gender where username = @username", conn)
+                    cmd.Parameters.AddWithValue("@realName", realName)
+                    cmd.Parameters.AddWithValue("@email", email)
+                    cmd.Parameters.AddWithValue("@phoneNumber", phoneNumber)
+                    cmd.Parameters.AddWithValue("@gender", gender)
+                    cmd.Parameters.AddWithValue("@username", Globals.nameOfcurrentUser)
+                    cmd.ExecuteNonQuery()
+                End Using
+            End Using
+            MessageBox.Show("Profile saved successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
+        Catch ex As Exception
+            MessageBox.Show("Error saving profile: " & ex.Message)
+        End Try
+    End Sub
+
+    '----------LOAD PROFILE DATA IF IT EXISTS-------------' 
+    Public Function LoadProfile() As (realName As String, email As String, phoneNumber As String, gender As String)
+        Try
+            Using con As New SQLiteConnection(connString)
+                con.Open()
+                Using cmd As New SQLiteCommand("SELECT realname, email, phone_number, gender from users where username = @username", con)
+                    cmd.Parameters.AddWithValue("@username", Globals.nameOfcurrentUser)
+                    Using reader As SQLiteDataReader = cmd.ExecuteReader()
+                        If reader.Read() Then
+                            Dim realName As String = If(reader.IsDBNull(0), "", reader.GetString(0))
+                            Dim email As String = If(reader.IsDBNull(1), "", reader.GetString(1))
+                            Dim phoneNumber As String = If(reader.IsDBNull(2), "", reader.GetString(2))
+                            Dim gender As String = If(reader.IsDBNull(3), "", reader.GetString(3))
+                            Return (realName, email, phoneNumber, gender)
+                        Else
+                            ' User not found, return empty strings
+                            Return ("", "", "", "")
+                        End If
+                    End Using
+                End Using
+            End Using
+        Catch ex As Exception
+            Return ("You are dumb", "", "", "")
+        End Try
+    End Function
+
 
     Public Shared Sub LogoutUser()
         Globals.IsLoggedIn = False
