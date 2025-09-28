@@ -14,6 +14,23 @@ End Module
 Public Class Home
     Public Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         DatabaseHelper.Initialize()
+        DataGridView1.DataSource = DatabaseHelper.GetProductsTable()
+
+        DataGridView1.Columns("name").Width = 170
+        DataGridView1.Columns("price").Width = 70
+        DataGridView1.Columns("type").Width = 166
+
+        DataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect
+
+        For Each column As DataGridViewColumn In DataGridView1.Columns
+            column.SortMode = DataGridViewColumnSortMode.NotSortable
+        Next
+        DataGridView1.ReadOnly = True
+        DataGridView1.AllowUserToResizeColumns = False
+        DataGridView1.AllowUserToResizeRows = False
+        DataGridView1.RowHeadersVisible = False
+        DataGridView1.AllowUserToResizeRows = False
+
     End Sub
 
     Public Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
@@ -81,4 +98,16 @@ Public Class Home
         End If
     End Sub
 
+    Private Sub DataGridView1_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView1.CellContentClick
+
+    End Sub
+
+    Private Sub PictureBox1_Click(sender As Object, e As EventArgs) Handles PictureBox1.Click
+
+    End Sub
+
+    Private Sub Button4_Click(sender As Object, e As EventArgs) Handles Button4.Click
+        Dim admin As New Admin_form()
+        admin.Show()
+    End Sub
 End Class

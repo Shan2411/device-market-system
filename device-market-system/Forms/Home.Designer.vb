@@ -22,73 +22,187 @@ Partial Class Home
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        components = New ComponentModel.Container()
         Button2 = New Button()
         DataGridView1 = New DataGridView()
-        TrackBar1 = New TrackBar()
+        DatabaseHelperBindingSource = New BindingSource(components)
+        Panel1 = New Panel()
+        Button4 = New Button()
+        Panel2 = New Panel()
+        Label3 = New Label()
+        Button3 = New Button()
+        Button1 = New Button()
+        Label2 = New Label()
         Label1 = New Label()
+        PictureBox1 = New PictureBox()
         CType(DataGridView1, ComponentModel.ISupportInitialize).BeginInit()
-        CType(TrackBar1, ComponentModel.ISupportInitialize).BeginInit()
+        CType(DatabaseHelperBindingSource, ComponentModel.ISupportInitialize).BeginInit()
+        Panel1.SuspendLayout()
+        Panel2.SuspendLayout()
+        CType(PictureBox1, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
         ' 
         ' Button2
         ' 
         Button2.Anchor = AnchorStyles.Top Or AnchorStyles.Right
-        Button2.Location = New Point(1048, 29)
+        Button2.BackColor = Color.LightGray
+        Button2.FlatAppearance.BorderSize = 0
+        Button2.FlatStyle = FlatStyle.Flat
+        Button2.Font = New Font("Lucida Console", 14.25F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        Button2.ForeColor = SystemColors.ActiveCaptionText
+        Button2.Location = New Point(24, 6)
+        Button2.Margin = New Padding(0)
         Button2.Name = "Button2"
-        Button2.Size = New Size(121, 44)
+        Button2.Size = New Size(162, 32)
         Button2.TabIndex = 3
-        Button2.Text = "PROFILE"
-        Button2.UseVisualStyleBackColor = True
+        Button2.Text = "👤  PROFILE"
+        Button2.TextAlign = ContentAlignment.MiddleLeft
+        Button2.UseVisualStyleBackColor = False
         ' 
         ' DataGridView1
         ' 
+        DataGridView1.AllowUserToAddRows = False
+        DataGridView1.AllowUserToDeleteRows = False
+        DataGridView1.AllowUserToResizeColumns = False
+        DataGridView1.AllowUserToResizeRows = False
         DataGridView1.Anchor = AnchorStyles.Top Or AnchorStyles.Left Or AnchorStyles.Right
-        DataGridView1.BackgroundColor = SystemColors.ButtonHighlight
-        DataGridView1.BorderStyle = BorderStyle.Fixed3D
-        DataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        DataGridView1.Location = New Point(79, 29)
+        DataGridView1.BackgroundColor = SystemColors.ControlLight
+        DataGridView1.BorderStyle = BorderStyle.None
+        DataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing
+        DataGridView1.Location = New Point(8, 55)
+        DataGridView1.Margin = New Padding(0)
         DataGridView1.Name = "DataGridView1"
         DataGridView1.RowHeadersWidth = 51
-        DataGridView1.Size = New Size(948, 434)
+        DataGridView1.Size = New Size(410, 583)
         DataGridView1.TabIndex = 4
         ' 
-        ' TrackBar1
+        ' DatabaseHelperBindingSource
         ' 
-        TrackBar1.Location = New Point(79, 536)
-        TrackBar1.Name = "TrackBar1"
-        TrackBar1.Size = New Size(317, 45)
-        TrackBar1.TabIndex = 5
+        DatabaseHelperBindingSource.DataSource = GetType(DatabaseHelper)
+        ' 
+        ' Panel1
+        ' 
+        Panel1.BackColor = Color.LightGray
+        Panel1.Controls.Add(Button4)
+        Panel1.Controls.Add(Button2)
+        Panel1.Location = New Point(0, 0)
+        Panel1.Margin = New Padding(0)
+        Panel1.Name = "Panel1"
+        Panel1.Size = New Size(1191, 44)
+        Panel1.TabIndex = 5
+        ' 
+        ' Button4
+        ' 
+        Button4.Location = New Point(798, 12)
+        Button4.Name = "Button4"
+        Button4.Size = New Size(293, 23)
+        Button4.TabIndex = 4
+        Button4.Text = "add picture for admin purpose only"
+        Button4.UseVisualStyleBackColor = True
+        ' 
+        ' Panel2
+        ' 
+        Panel2.BackColor = SystemColors.Control
+        Panel2.Controls.Add(Label3)
+        Panel2.Controls.Add(Button3)
+        Panel2.Controls.Add(Button1)
+        Panel2.Controls.Add(Label2)
+        Panel2.Controls.Add(Label1)
+        Panel2.Controls.Add(PictureBox1)
+        Panel2.Location = New Point(422, 44)
+        Panel2.Name = "Panel2"
+        Panel2.Size = New Size(769, 603)
+        Panel2.TabIndex = 6
+        ' 
+        ' Label3
+        ' 
+        Label3.AutoSize = True
+        Label3.Location = New Point(95, 261)
+        Label3.Name = "Label3"
+        Label3.Size = New Size(66, 15)
+        Label3.TabIndex = 5
+        Label3.Text = "description"
+        ' 
+        ' Button3
+        ' 
+        Button3.Location = New Point(393, 164)
+        Button3.Name = "Button3"
+        Button3.Size = New Size(103, 36)
+        Button3.TabIndex = 4
+        Button3.Text = "Add to Cart"
+        Button3.UseVisualStyleBackColor = True
+        ' 
+        ' Button1
+        ' 
+        Button1.Location = New Point(267, 164)
+        Button1.Name = "Button1"
+        Button1.Size = New Size(103, 36)
+        Button1.TabIndex = 3
+        Button1.Text = "Purchase"
+        Button1.UseVisualStyleBackColor = True
+        ' 
+        ' Label2
+        ' 
+        Label2.AutoSize = True
+        Label2.Font = New Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        Label2.Location = New Point(267, 109)
+        Label2.Name = "Label2"
+        Label2.Size = New Size(67, 20)
+        Label2.TabIndex = 2
+        Label2.Text = "49.5 PHP"
         ' 
         ' Label1
         ' 
         Label1.AutoSize = True
-        Label1.Location = New Point(85, 497)
+        Label1.Font = New Font("Microsoft Sans Serif", 24F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        Label1.Location = New Point(250, 50)
         Label1.Name = "Label1"
-        Label1.Size = New Size(69, 15)
-        Label1.TabIndex = 6
-        Label1.Text = "Price Range"
+        Label1.Size = New Size(246, 37)
+        Label1.TabIndex = 1
+        Label1.Text = "Gaming Mouse"
+        ' 
+        ' PictureBox1
+        ' 
+        PictureBox1.Image = My.Resources.Resources._3_Tasten_Maus_Microsoft
+        PictureBox1.Location = New Point(34, 30)
+        PictureBox1.Name = "PictureBox1"
+        PictureBox1.Size = New Size(194, 170)
+        PictureBox1.SizeMode = PictureBoxSizeMode.StretchImage
+        PictureBox1.TabIndex = 0
+        PictureBox1.TabStop = False
         ' 
         ' Home
         ' 
         AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
         AutoScroll = True
-        ClientSize = New Size(1191, 649)
-        Controls.Add(Label1)
-        Controls.Add(TrackBar1)
+        BackColor = SystemColors.ControlLight
+        ClientSize = New Size(1191, 695)
+        Controls.Add(Panel2)
+        Controls.Add(Panel1)
         Controls.Add(DataGridView1)
-        Controls.Add(Button2)
         Margin = New Padding(3, 2, 3, 2)
         Name = "Home"
         Text = "Device Market System"
         CType(DataGridView1, ComponentModel.ISupportInitialize).EndInit()
-        CType(TrackBar1, ComponentModel.ISupportInitialize).EndInit()
+        CType(DatabaseHelperBindingSource, ComponentModel.ISupportInitialize).EndInit()
+        Panel1.ResumeLayout(False)
+        Panel2.ResumeLayout(False)
+        Panel2.PerformLayout()
+        CType(PictureBox1, ComponentModel.ISupportInitialize).EndInit()
         ResumeLayout(False)
-        PerformLayout()
     End Sub
     Friend WithEvents Button2 As Button
     Friend WithEvents DataGridView1 As DataGridView
-    Friend WithEvents TrackBar1 As TrackBar
+    Friend WithEvents Panel1 As Panel
+    Friend WithEvents Panel2 As Panel
+    Friend WithEvents DatabaseHelperBindingSource As BindingSource
+    Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents Label1 As Label
+    Friend WithEvents Label2 As Label
+    Friend WithEvents Button3 As Button
+    Friend WithEvents Button1 As Button
+    Friend WithEvents Label3 As Label
+    Friend WithEvents Button4 As Button
 
 End Class

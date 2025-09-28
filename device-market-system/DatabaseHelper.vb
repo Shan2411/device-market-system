@@ -1,8 +1,9 @@
 ﻿Imports System.ComponentModel.DataAnnotations
 Imports System.Data.SQLite
+Imports System.Drawing
 
 Public Class DatabaseHelper
-    'palitan yung path ng database di ko magawa relative path'
+    'palitan yung path ng database para gumana di ko magawa relative path'
     Private Shared ReadOnly dbPath As String = IO.Path.Combine(Application.StartupPath, "C:\Users\HP\source\repos\device-market-system\device-market-system\database\im_database.db")
     Private Shared ReadOnly connString As String = "Data Source=" & dbPath & ";Version=3;"
 
@@ -149,6 +150,45 @@ Public Class DatabaseHelper
         End Try
     End Function
 
+    '----------GET PRODUCTS TABLE FOR DATAGRIDVIEW-------------'
+    Public Shared Function GetProductsTable() As DataTable
+        Dim query As String = "SELECT name, price, type FROM products"
+
+        Using conn As New SQLiteConnection(connString)
+            conn.Open()
+            Using adapter As New SQLiteDataAdapter(query, conn)
+                Dim dt As New DataTable()
+                adapter.Fill(dt)
+                Return dt
+            End Using
+        End Using
+
+    End Function
+
+    '-------STORE IMAGES IN SQLITE---------------'
+
+    Public Shared Sub Insertimage(imagepath As String)
+        Try
+            Using img As Image = Image.FromFile(imagepath)
+                Using ms As New IO.MemoryStream()
+                    img.Save(ms, Imaging.ImageFormat.Jpeg)
+                    Dim imgBytes As Byte() = ms.ToArray()
+                    Using conn As New SQLiteConnection(connString)
+                        conn.Open()
+                        Using cmd As New SQLiteCommand("Update products set photo = @imageData where name = @name", conn)
+                            cmd.Parameters.AddWithValue("@imageData", imgBytes)
+                            cmd.Parameters.AddWithValue("@name", "Gaming Mouse") 'change name la8r
+                            cmd.ExecuteNonQuery()
+                        End Using
+                    End Using
+                End Using
+            End Using
+            MessageBox.Show("Image inserted successfully!")
+        Catch ex As Exception
+            MessageBox.Show("Error inserting image: " & ex.Message)
+        End Try
+
+    End Sub
 
     Public Shared Sub LogoutUser()
         Globals.IsLoggedIn = False
