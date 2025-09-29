@@ -52,7 +52,7 @@ Partial Class Home
         Button2.FlatAppearance.BorderSize = 0
         Button2.Font = New Font("Segoe UI Emoji", 12F)
         Button2.ForeColor = SystemColors.ControlText
-        Button2.Location = New Point(921, 7)
+        Button2.Location = New Point(941, 6)
         Button2.Margin = New Padding(0)
         Button2.Name = "Button2"
         Button2.Size = New Size(123, 28)
@@ -74,7 +74,7 @@ Partial Class Home
         DataGridView1.Margin = New Padding(0)
         DataGridView1.Name = "DataGridView1"
         DataGridView1.RowHeadersWidth = 51
-        DataGridView1.Size = New Size(439, 583)
+        DataGridView1.Size = New Size(470, 583)
         DataGridView1.TabIndex = 4
         ' 
         ' DatabaseHelperBindingSource
@@ -91,28 +91,33 @@ Partial Class Home
         Panel1.Location = New Point(1, 1)
         Panel1.Margin = New Padding(0)
         Panel1.Name = "Panel1"
-        Panel1.Size = New Size(1224, 39)
+        Panel1.Size = New Size(1255, 39)
         Panel1.TabIndex = 5
         ' 
         ' TextBox1
         ' 
-        TextBox1.Location = New Point(128, 11)
+        TextBox1.Font = New Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        TextBox1.Location = New Point(145, 6)
         TextBox1.Name = "TextBox1"
-        TextBox1.Size = New Size(257, 23)
+        TextBox1.Size = New Size(248, 27)
         TextBox1.TabIndex = 9
         ' 
         ' ComboBox1
         ' 
+        ComboBox1.DropDownHeight = 110
+        ComboBox1.DropDownWidth = 120
+        ComboBox1.Font = New Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
         ComboBox1.FormattingEnabled = True
-        ComboBox1.Location = New Point(7, 11)
+        ComboBox1.IntegralHeight = False
+        ComboBox1.Location = New Point(7, 7)
         ComboBox1.Name = "ComboBox1"
-        ComboBox1.Size = New Size(115, 23)
+        ComboBox1.Size = New Size(132, 25)
         ComboBox1.TabIndex = 7
         ' 
         ' Button5
         ' 
         Button5.Font = New Font("Segoe UI Emoji", 12F)
-        Button5.Location = New Point(1050, 7)
+        Button5.Location = New Point(1067, 5)
         Button5.Name = "Button5"
         Button5.Size = New Size(123, 28)
         Button5.TabIndex = 5
@@ -122,7 +127,7 @@ Partial Class Home
         ' Button4
         ' 
         Button4.Font = New Font("Consolas", 9F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
-        Button4.Location = New Point(899, 668)
+        Button4.Location = New Point(427, 563)
         Button4.Name = "Button4"
         Button4.Size = New Size(314, 23)
         Button4.TabIndex = 4
@@ -133,6 +138,7 @@ Partial Class Home
         ' 
         Panel2.BackColor = SystemColors.Control
         Panel2.Controls.Add(Label3)
+        Panel2.Controls.Add(Button4)
         Panel2.Controls.Add(Button3)
         Panel2.Controls.Add(Button1)
         Panel2.Controls.Add(Label2)
@@ -207,9 +213,8 @@ Partial Class Home
         AutoScaleMode = AutoScaleMode.Font
         AutoScroll = True
         BackColor = SystemColors.ControlLight
-        ClientSize = New Size(1225, 699)
+        ClientSize = New Size(1255, 724)
         Controls.Add(Panel2)
-        Controls.Add(Button4)
         Controls.Add(Panel1)
         Controls.Add(DataGridView1)
         Margin = New Padding(3, 2, 3, 2)
