@@ -52,7 +52,7 @@ Partial Class Home
         Button2.FlatAppearance.BorderSize = 0
         Button2.Font = New Font("Segoe UI Emoji", 12F)
         Button2.ForeColor = SystemColors.ControlText
-        Button2.Location = New Point(924, 7)
+        Button2.Location = New Point(921, 7)
         Button2.Margin = New Padding(0)
         Button2.Name = "Button2"
         Button2.Size = New Size(123, 28)
@@ -74,7 +74,7 @@ Partial Class Home
         DataGridView1.Margin = New Padding(0)
         DataGridView1.Name = "DataGridView1"
         DataGridView1.RowHeadersWidth = 51
-        DataGridView1.Size = New Size(402, 583)
+        DataGridView1.Size = New Size(439, 583)
         DataGridView1.TabIndex = 4
         ' 
         ' DatabaseHelperBindingSource
@@ -88,17 +88,17 @@ Partial Class Home
         Panel1.Controls.Add(ComboBox1)
         Panel1.Controls.Add(Button5)
         Panel1.Controls.Add(Button2)
-        Panel1.Location = New Point(0, 0)
+        Panel1.Location = New Point(1, 1)
         Panel1.Margin = New Padding(0)
         Panel1.Name = "Panel1"
-        Panel1.Size = New Size(1191, 41)
+        Panel1.Size = New Size(1224, 39)
         Panel1.TabIndex = 5
         ' 
         ' TextBox1
         ' 
         TextBox1.Location = New Point(128, 11)
         TextBox1.Name = "TextBox1"
-        TextBox1.Size = New Size(281, 23)
+        TextBox1.Size = New Size(257, 23)
         TextBox1.TabIndex = 9
         ' 
         ' ComboBox1
@@ -122,18 +122,17 @@ Partial Class Home
         ' Button4
         ' 
         Button4.Font = New Font("Consolas", 9F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
-        Button4.Location = New Point(475, 586)
+        Button4.Location = New Point(899, 668)
         Button4.Name = "Button4"
-        Button4.Size = New Size(293, 23)
+        Button4.Size = New Size(314, 23)
         Button4.TabIndex = 4
-        Button4.Text = "add picture for admin purpose only"
+        Button4.Text = "remove lateradd picture for admin purpose only"
         Button4.UseVisualStyleBackColor = True
         ' 
         ' Panel2
         ' 
         Panel2.BackColor = SystemColors.Control
         Panel2.Controls.Add(Label3)
-        Panel2.Controls.Add(Button4)
         Panel2.Controls.Add(Button3)
         Panel2.Controls.Add(Button1)
         Panel2.Controls.Add(Label2)
@@ -208,8 +207,9 @@ Partial Class Home
         AutoScaleMode = AutoScaleMode.Font
         AutoScroll = True
         BackColor = SystemColors.ControlLight
-        ClientSize = New Size(1192, 663)
+        ClientSize = New Size(1225, 699)
         Controls.Add(Panel2)
+        Controls.Add(Button4)
         Controls.Add(Panel1)
         Controls.Add(DataGridView1)
         Margin = New Padding(3, 2, 3, 2)
