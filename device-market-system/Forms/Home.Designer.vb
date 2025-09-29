@@ -74,7 +74,7 @@ Partial Class Home
         DataGridView1.Margin = New Padding(0)
         DataGridView1.Name = "DataGridView1"
         DataGridView1.RowHeadersWidth = 51
-        DataGridView1.Size = New Size(470, 583)
+        DataGridView1.Size = New Size(499, 583)
         DataGridView1.TabIndex = 4
         ' 
         ' DatabaseHelperBindingSource
@@ -213,7 +213,7 @@ Partial Class Home
         AutoScaleMode = AutoScaleMode.Font
         AutoScroll = True
         BackColor = SystemColors.ControlLight
-        ClientSize = New Size(1255, 724)
+        ClientSize = New Size(1240, 724)
         Controls.Add(Panel2)
         Controls.Add(Panel1)
         Controls.Add(DataGridView1)

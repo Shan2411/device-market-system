@@ -18,7 +18,7 @@ Public Class DatabaseHelper
                 reader.Close()
             End Using
         Catch ex As Exception
-            MessageBox.Show("Error connecting to DB: " & ex.Message)
+            MessageBox.Show("Change nyo yung path ng db file sa database helper na file: " & ex.Message)
         End Try
     End Sub
 
