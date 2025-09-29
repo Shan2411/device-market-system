@@ -27,6 +27,9 @@ Partial Class Home
         DataGridView1 = New DataGridView()
         DatabaseHelperBindingSource = New BindingSource(components)
         Panel1 = New Panel()
+        TextBox1 = New TextBox()
+        ComboBox1 = New ComboBox()
+        Button5 = New Button()
         Button4 = New Button()
         Panel2 = New Panel()
         Label3 = New Label()
@@ -45,18 +48,16 @@ Partial Class Home
         ' Button2
         ' 
         Button2.Anchor = AnchorStyles.Top Or AnchorStyles.Right
-        Button2.BackColor = Color.LightGray
+        Button2.BackColor = Color.White
         Button2.FlatAppearance.BorderSize = 0
-        Button2.FlatStyle = FlatStyle.Flat
-        Button2.Font = New Font("Lucida Console", 14.25F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
-        Button2.ForeColor = SystemColors.ActiveCaptionText
-        Button2.Location = New Point(24, 6)
+        Button2.Font = New Font("Segoe UI Emoji", 12F)
+        Button2.ForeColor = SystemColors.ControlText
+        Button2.Location = New Point(924, 7)
         Button2.Margin = New Padding(0)
         Button2.Name = "Button2"
-        Button2.Size = New Size(162, 32)
+        Button2.Size = New Size(123, 28)
         Button2.TabIndex = 3
-        Button2.Text = "👤  PROFILE"
-        Button2.TextAlign = ContentAlignment.MiddleLeft
+        Button2.Text = "👤  Profile"
         Button2.UseVisualStyleBackColor = False
         ' 
         ' DataGridView1
@@ -69,11 +70,11 @@ Partial Class Home
         DataGridView1.BackgroundColor = SystemColors.ControlLight
         DataGridView1.BorderStyle = BorderStyle.None
         DataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing
-        DataGridView1.Location = New Point(8, 55)
+        DataGridView1.Location = New Point(7, 55)
         DataGridView1.Margin = New Padding(0)
         DataGridView1.Name = "DataGridView1"
         DataGridView1.RowHeadersWidth = 51
-        DataGridView1.Size = New Size(410, 583)
+        DataGridView1.Size = New Size(402, 583)
         DataGridView1.TabIndex = 4
         ' 
         ' DatabaseHelperBindingSource
@@ -82,18 +83,46 @@ Partial Class Home
         ' 
         ' Panel1
         ' 
-        Panel1.BackColor = Color.LightGray
-        Panel1.Controls.Add(Button4)
+        Panel1.BackColor = Color.Gainsboro
+        Panel1.Controls.Add(TextBox1)
+        Panel1.Controls.Add(ComboBox1)
+        Panel1.Controls.Add(Button5)
         Panel1.Controls.Add(Button2)
         Panel1.Location = New Point(0, 0)
         Panel1.Margin = New Padding(0)
         Panel1.Name = "Panel1"
-        Panel1.Size = New Size(1191, 44)
+        Panel1.Size = New Size(1191, 41)
         Panel1.TabIndex = 5
+        ' 
+        ' TextBox1
+        ' 
+        TextBox1.Location = New Point(128, 11)
+        TextBox1.Name = "TextBox1"
+        TextBox1.Size = New Size(281, 23)
+        TextBox1.TabIndex = 9
+        ' 
+        ' ComboBox1
+        ' 
+        ComboBox1.FormattingEnabled = True
+        ComboBox1.Location = New Point(7, 11)
+        ComboBox1.Name = "ComboBox1"
+        ComboBox1.Size = New Size(115, 23)
+        ComboBox1.TabIndex = 7
+        ' 
+        ' Button5
+        ' 
+        Button5.Font = New Font("Segoe UI Emoji", 12F)
+        Button5.Location = New Point(1050, 7)
+        Button5.Name = "Button5"
+        Button5.Size = New Size(123, 28)
+        Button5.TabIndex = 5
+        Button5.Text = ChrW(55357) & ChrW(57042) & " View Cart"
+        Button5.UseVisualStyleBackColor = True
         ' 
         ' Button4
         ' 
-        Button4.Location = New Point(798, 12)
+        Button4.Font = New Font("Consolas", 9F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        Button4.Location = New Point(475, 586)
         Button4.Name = "Button4"
         Button4.Size = New Size(293, 23)
         Button4.TabIndex = 4
@@ -104,28 +133,30 @@ Partial Class Home
         ' 
         Panel2.BackColor = SystemColors.Control
         Panel2.Controls.Add(Label3)
+        Panel2.Controls.Add(Button4)
         Panel2.Controls.Add(Button3)
         Panel2.Controls.Add(Button1)
         Panel2.Controls.Add(Label2)
         Panel2.Controls.Add(Label1)
         Panel2.Controls.Add(PictureBox1)
-        Panel2.Location = New Point(422, 44)
+        Panel2.Location = New Point(412, 42)
         Panel2.Name = "Panel2"
-        Panel2.Size = New Size(769, 603)
+        Panel2.Size = New Size(779, 620)
         Panel2.TabIndex = 6
         ' 
         ' Label3
         ' 
         Label3.AutoSize = True
-        Label3.Location = New Point(95, 261)
+        Label3.Font = New Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        Label3.Location = New Point(115, 277)
         Label3.Name = "Label3"
-        Label3.Size = New Size(66, 15)
+        Label3.Size = New Size(83, 20)
         Label3.TabIndex = 5
         Label3.Text = "description"
         ' 
         ' Button3
         ' 
-        Button3.Location = New Point(393, 164)
+        Button3.Location = New Point(394, 170)
         Button3.Name = "Button3"
         Button3.Size = New Size(103, 36)
         Button3.TabIndex = 4
@@ -134,7 +165,7 @@ Partial Class Home
         ' 
         ' Button1
         ' 
-        Button1.Location = New Point(267, 164)
+        Button1.Location = New Point(268, 170)
         Button1.Name = "Button1"
         Button1.Size = New Size(103, 36)
         Button1.TabIndex = 3
@@ -144,10 +175,10 @@ Partial Class Home
         ' Label2
         ' 
         Label2.AutoSize = True
-        Label2.Font = New Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
-        Label2.Location = New Point(267, 109)
+        Label2.Font = New Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        Label2.Location = New Point(268, 109)
         Label2.Name = "Label2"
-        Label2.Size = New Size(67, 20)
+        Label2.Size = New Size(86, 25)
         Label2.TabIndex = 2
         Label2.Text = "49.5 PHP"
         ' 
@@ -155,7 +186,7 @@ Partial Class Home
         ' 
         Label1.AutoSize = True
         Label1.Font = New Font("Microsoft Sans Serif", 24F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        Label1.Location = New Point(250, 50)
+        Label1.Location = New Point(251, 50)
         Label1.Name = "Label1"
         Label1.Size = New Size(246, 37)
         Label1.TabIndex = 1
@@ -164,7 +195,7 @@ Partial Class Home
         ' PictureBox1
         ' 
         PictureBox1.Image = My.Resources.Resources._3_Tasten_Maus_Microsoft
-        PictureBox1.Location = New Point(34, 30)
+        PictureBox1.Location = New Point(35, 36)
         PictureBox1.Name = "PictureBox1"
         PictureBox1.Size = New Size(194, 170)
         PictureBox1.SizeMode = PictureBoxSizeMode.StretchImage
@@ -177,16 +208,18 @@ Partial Class Home
         AutoScaleMode = AutoScaleMode.Font
         AutoScroll = True
         BackColor = SystemColors.ControlLight
-        ClientSize = New Size(1191, 695)
+        ClientSize = New Size(1192, 663)
         Controls.Add(Panel2)
         Controls.Add(Panel1)
         Controls.Add(DataGridView1)
         Margin = New Padding(3, 2, 3, 2)
+        MaximizeBox = False
         Name = "Home"
         Text = "Device Market System"
         CType(DataGridView1, ComponentModel.ISupportInitialize).EndInit()
         CType(DatabaseHelperBindingSource, ComponentModel.ISupportInitialize).EndInit()
         Panel1.ResumeLayout(False)
+        Panel1.PerformLayout()
         Panel2.ResumeLayout(False)
         Panel2.PerformLayout()
         CType(PictureBox1, ComponentModel.ISupportInitialize).EndInit()
@@ -204,5 +237,8 @@ Partial Class Home
     Friend WithEvents Button1 As Button
     Friend WithEvents Label3 As Label
     Friend WithEvents Button4 As Button
+    Friend WithEvents Button5 As Button
+    Friend WithEvents TextBox1 As TextBox
+    Friend WithEvents ComboBox1 As ComboBox
 
 End Class

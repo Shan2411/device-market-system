@@ -25,6 +25,8 @@ Partial Class Admin_form
         Button1 = New Button()
         Label1 = New Label()
         TextBox1 = New TextBox()
+        Label2 = New Label()
+        TextBox2 = New TextBox()
         SuspendLayout()
         ' 
         ' Button1
@@ -52,11 +54,29 @@ Partial Class Admin_form
         TextBox1.Size = New Size(551, 23)
         TextBox1.TabIndex = 2
         ' 
+        ' Label2
+        ' 
+        Label2.AutoSize = True
+        Label2.Location = New Point(87, 135)
+        Label2.Name = "Label2"
+        Label2.Size = New Size(126, 15)
+        Label2.TabIndex = 3
+        Label2.Text = "name of product in db"
+        ' 
+        ' TextBox2
+        ' 
+        TextBox2.Location = New Point(228, 127)
+        TextBox2.Name = "TextBox2"
+        TextBox2.Size = New Size(485, 23)
+        TextBox2.TabIndex = 4
+        ' 
         ' Admin_form
         ' 
         AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
         ClientSize = New Size(800, 450)
+        Controls.Add(TextBox2)
+        Controls.Add(Label2)
         Controls.Add(TextBox1)
         Controls.Add(Label1)
         Controls.Add(Button1)
@@ -69,4 +89,6 @@ Partial Class Admin_form
     Friend WithEvents Button1 As Button
     Friend WithEvents Label1 As Label
     Friend WithEvents TextBox1 As TextBox
+    Friend WithEvents Label2 As Label
+    Friend WithEvents TextBox2 As TextBox
 End Class

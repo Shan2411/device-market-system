@@ -167,7 +167,7 @@ Public Class DatabaseHelper
 
     '-------STORE IMAGES IN SQLITE---------------'
 
-    Public Shared Sub Insertimage(imagepath As String)
+    Public Shared Sub Insertimage(imagepath As String, nameFromDB As String)
         Try
             Using img As Image = Image.FromFile(imagepath)
                 Using ms As New IO.MemoryStream()
@@ -177,7 +177,7 @@ Public Class DatabaseHelper
                         conn.Open()
                         Using cmd As New SQLiteCommand("Update products set photo = @imageData where name = @name", conn)
                             cmd.Parameters.AddWithValue("@imageData", imgBytes)
-                            cmd.Parameters.AddWithValue("@name", "Gaming Mouse") 'change name la8r
+                            cmd.Parameters.AddWithValue("@name", nameFromDB)
                             cmd.ExecuteNonQuery()
                         End Using
                     End Using
@@ -190,9 +190,65 @@ Public Class DatabaseHelper
 
     End Sub
 
+    '-----------FETCH DETAILS OF A PRODUCT--------------'
+
+    Public Shared Function GetProductDetails(name)
+        Try
+            Using conn As New SQLiteConnection(connString)
+                conn.Open()
+                Using cmd As New SQLiteCommand("SELECT * FROM products WHERE name = @name", conn)
+                    cmd.Parameters.AddWithValue("@name", name)
+                    Using reader As SQLiteDataReader = cmd.ExecuteReader()
+                        If reader.Read() Then
+                            Dim productName As String = reader("name").ToString()
+                            Dim price As Decimal = Convert.ToDecimal(reader("price"))
+                            Dim type As String = reader("type").ToString()
+                            Dim description As String = reader("description").ToString()
+
+                            Dim photo As Image = Nothing
+                            If Not IsDBNull(reader("photo")) Then
+                                Dim imageData() As Byte = CType(reader("photo"), Byte())
+                                Using ms As New IO.MemoryStream(imageData)
+                                    photo = Image.FromStream(ms)
+                                End Using
+                            End If
+
+                            Return (productName, price, type, photo, description)
+                        Else
+                            Return (Nothing, Nothing, Nothing, Nothing)
+                        End If
+                    End Using
+                End Using
+            End Using
+        Catch ex As Exception
+            Return (Nothing, Nothing, Nothing, Nothing)
+        End Try
+    End Function
+
     Public Shared Sub LogoutUser()
         Globals.IsLoggedIn = False
         Globals.nameOfcurrentUser = ""
+
+    End Sub
+
+    '---------SELECT BY CATEGORY BASED ON COMBOBOX ---------------------'
+
+    Public Shared Sub SelectByCategory(searchText As String, columnName As String)
+        Try
+            Using conn As New SQLiteConnection(connString)
+                conn.Open()
+                Using cmd As New SQLiteCommand($"SELECT name, price, type FROM products where {columnName} like @textFromSearchbar || '%'", conn)
+                    cmd.Parameters.AddWithValue("@textFromSearchbar", searchText)
+                    Using adapter As New SQLiteDataAdapter(cmd)
+                        Dim dt As New DataTable()
+                        adapter.Fill(dt)
+                        Home.DataGridView1.DataSource = dt
+                    End Using
+                End Using
+            End Using
+        Catch ex As Exception
+            MessageBox.Show("Error during search: " & ex.Message)
+        End Try
 
     End Sub
 

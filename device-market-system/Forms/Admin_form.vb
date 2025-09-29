@@ -11,6 +11,7 @@ Public Class Admin_form
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         Dim image = TextBox1.Text
-        DatabaseHelper.Insertimage(image)
+        Dim namefromDB = TextBox2.Text
+        DatabaseHelper.Insertimage(image, namefromDB)
     End Sub
 End Class
