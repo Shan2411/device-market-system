@@ -99,32 +99,6 @@ Public Class Home
         End If
     End Sub
 
-    Private Sub Button1_Click(sender As Object, e As EventArgs)
-        If IsLoggedIn Then
-
-
-
-        Else 'If not logged in yet'
-            MessageBox.Show("Please log in to access the dashboard.", "Access Denied", MessageBoxButtons.OK, MessageBoxIcon.Warning)
-            If Not LoginSignupIsOpened Then
-                Dim frm3 As New Log_in
-                frm3.Show()
-                LoginSignupIsOpened = True
-            Else
-                'If login/signup window is opened do nothing bring the form to the front instead'
-                For Each f As Form In Application.OpenForms
-                    If TypeOf f Is Log_in Then
-                        f.BringToFront()
-                        Exit For
-                    ElseIf TypeOf f Is Form2 Then
-                        f.BringToFront()
-                        Exit For
-                    End If
-                Next
-            End If
-
-        End If
-    End Sub
 
     Private Sub DataGridView1_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView1.CellContentClick
 
@@ -170,6 +144,8 @@ Public Class Home
     Private Sub Button1_Click_1(sender As Object, e As EventArgs) Handles Button1.Click
         If IsLoggedIn Then
 
+            MessageBox.Show("This feature is currently under development.", "Feature Not Ready Yet", MessageBoxButtons.OK, MessageBoxIcon.Information)
+
         Else 'If not logged in yet'
             MessageBox.Show("Please log in to access the dashboard.", "Access Denied", MessageBoxButtons.OK, MessageBoxIcon.Warning)
             If Not LoginSignupIsOpened Then
@@ -194,6 +170,8 @@ Public Class Home
 
     Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
         If IsLoggedIn Then
+
+            MessageBox.Show("This feature is currently under development.", "Feature Not Ready Yet", MessageBoxButtons.OK, MessageBoxIcon.Information)
 
         Else 'If not logged in yet'
             MessageBox.Show("Please log in to access the dashboard.", "Access Denied", MessageBoxButtons.OK, MessageBoxIcon.Warning)
@@ -249,5 +227,30 @@ Public Class Home
 
     Private Sub Panel1_Paint(sender As Object, e As PaintEventArgs)
 
+    End Sub
+
+    Private Sub Button5_Click(sender As Object, e As EventArgs) Handles Button5.Click
+        If IsLoggedIn Then
+            MessageBox.Show("This feature is currently under development.", "Feature Not Ready Yet", MessageBoxButtons.OK, MessageBoxIcon.Information)
+        Else 'If not logged in yet'
+            MessageBox.Show("Please log in to access the dashboard.", "Access Denied", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            If Not LoginSignupIsOpened Then
+                Dim frm3 As New Log_in()
+                frm3.Show()
+                LoginSignupIsOpened = True
+            Else
+                'If login/signup window is opened do nothing bring the form to the front instead'
+                For Each f As Form In Application.OpenForms
+                    If TypeOf f Is Log_in Then
+                        f.BringToFront()
+                        Exit For
+                    ElseIf TypeOf f Is Form2 Then
+                        f.BringToFront()
+                        Exit For
+                    End If
+                Next
+            End If
+
+        End If
     End Sub
 End Class

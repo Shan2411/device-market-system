@@ -38,6 +38,7 @@ Partial Class Home
         Label2 = New Label()
         Label1 = New Label()
         PictureBox1 = New PictureBox()
+        Panel3 = New Panel()
         CType(DataGridView1, ComponentModel.ISupportInitialize).BeginInit()
         CType(DatabaseHelperBindingSource, ComponentModel.ISupportInitialize).BeginInit()
         Panel1.SuspendLayout()
@@ -50,7 +51,7 @@ Partial Class Home
         Button2.Anchor = AnchorStyles.Top Or AnchorStyles.Right
         Button2.BackColor = Color.White
         Button2.FlatAppearance.BorderSize = 0
-        Button2.Font = New Font("Segoe UI Emoji", 12F)
+        Button2.Font = New Font("Segoe UI Emoji", 11.25F)
         Button2.ForeColor = SystemColors.ControlText
         Button2.Location = New Point(941, 6)
         Button2.Margin = New Padding(0)
@@ -74,7 +75,7 @@ Partial Class Home
         DataGridView1.Margin = New Padding(0)
         DataGridView1.Name = "DataGridView1"
         DataGridView1.RowHeadersWidth = 51
-        DataGridView1.Size = New Size(499, 583)
+        DataGridView1.Size = New Size(523, 583)
         DataGridView1.TabIndex = 4
         ' 
         ' DatabaseHelperBindingSource
@@ -116,7 +117,7 @@ Partial Class Home
         ' 
         ' Button5
         ' 
-        Button5.Font = New Font("Segoe UI Emoji", 12F)
+        Button5.Font = New Font("Segoe UI Emoji", 11.25F)
         Button5.Location = New Point(1067, 5)
         Button5.Name = "Button5"
         Button5.Size = New Size(123, 28)
@@ -146,7 +147,7 @@ Partial Class Home
         Panel2.Controls.Add(PictureBox1)
         Panel2.Location = New Point(412, 42)
         Panel2.Name = "Panel2"
-        Panel2.Size = New Size(779, 620)
+        Panel2.Size = New Size(779, 632)
         Panel2.TabIndex = 6
         ' 
         ' Label3
@@ -207,13 +208,23 @@ Partial Class Home
         PictureBox1.TabIndex = 0
         PictureBox1.TabStop = False
         ' 
+        ' Panel3
+        ' 
+        Panel3.BackColor = Color.Gainsboro
+        Panel3.Location = New Point(0, 677)
+        Panel3.Margin = New Padding(0)
+        Panel3.Name = "Panel3"
+        Panel3.Size = New Size(1255, 45)
+        Panel3.TabIndex = 7
+        ' 
         ' Home
         ' 
         AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
         AutoScroll = True
         BackColor = SystemColors.ControlLight
-        ClientSize = New Size(1240, 724)
+        ClientSize = New Size(1256, 724)
+        Controls.Add(Panel3)
         Controls.Add(Panel2)
         Controls.Add(Panel1)
         Controls.Add(DataGridView1)
@@ -245,5 +256,6 @@ Partial Class Home
     Friend WithEvents Button5 As Button
     Friend WithEvents TextBox1 As TextBox
     Friend WithEvents ComboBox1 As ComboBox
+    Friend WithEvents Panel3 As Panel
 
 End Class
